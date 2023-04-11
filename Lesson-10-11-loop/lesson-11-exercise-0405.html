@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let initialAmount = parseFloat(prompt("Enter the initial amount of the loan:"));
+        let numMonths = parseInt(prompt("Enter the number of loan months:"));
+        let monthlyRate = parseFloat(prompt("Enter the monthly interest rate (as a decimal):"));
+
+
+        let totalInterest = 0;
+        let currentBalance = initialAmount;
+
+        for (let i = 0; i < numMonths; i++) {
+
+            let monthlyInterest = currentBalance * monthlyRate;
+
+            totalInterest += monthlyInterest;
+
+            currentBalance -= (initialAmount / numMonths);
+
+            currentBalance += monthlyInterest;
+        }
+
+        console.log("Total interest: $" + totalInterest.toFixed(2));
+
+
+
+    </script>
+</body>
+
+</html>

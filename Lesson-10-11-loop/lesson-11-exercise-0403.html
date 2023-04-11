@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function printRectangle(width, height) {
+            let result = "";
+            for (let i = 0; i < height; i++) {
+                let row = "";
+                for (let j = 0; j < width; j++) {
+                    if (j === 0 || j === width - 1 || i === 0 || i === height - 1) {
+                        row += "*";
+                    } else {
+                        row += " ";
+                    }
+                }
+                result += row + "\n";
+            }
+            return result;
+        }
+
+        console.log(printRectangle(21, 7));
+
+    </script>
+</body>
+
+</html>
