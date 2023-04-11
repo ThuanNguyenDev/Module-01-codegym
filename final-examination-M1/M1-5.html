@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="DemoCanvas"></canvas>
+
+    <script>
+        class Rectangle {
+
+            constructor(x, y, width, height, color) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+
+            getWidth() {
+                return this.width;
+            }
+
+            getHeight() {
+                return this.height;
+            }
+
+            setWidth(width) {
+                this.width = width;
+            }
+
+            setHeight(height) {
+                this.height = height;
+            }
+
+            getArea() {
+                return this.width * this.height;
+            }
+
+            getPerimeter() {
+                return (this.width + this.height) * 2;
+            }
+
+
+            draw() {
+                let canvas = document.getElementById("DemoCanvas");
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+
+
+        }
+
+        let myRectangle = new Rectangle(150, 50, 100, 200, "red");
+        let width = myRectangle.getWidth();
+        let height = myRectangle.getHeight();
+
+        myRectangle.setWidth(200);
+        myRectangle.getWidth();
+
+        document.write(myRectangle.getWidth());
+        myRectangle.draw();
+
+
+    </script>
+</body>
+
+</html>

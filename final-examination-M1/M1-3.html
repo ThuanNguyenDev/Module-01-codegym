@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng số nguyên tố khi nhập 1 số x bất kỳ</title>
+</head>
+
+<body>
+    <script>
+
+        // kiểm tra xem từng số có phải là số nguyên tố hay không
+        function isPrime(x) {
+            if (x < 2) return false;
+            let count = 0;
+            for (let i = 2; i <= x; i++) {
+                if (x % i === 0) {
+                    count++;
+                }
+            }
+            if (count === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        //Sau khi kiểm tra xong , khai báo hàm tính tổng các số nguyên tố
+        function sumPrimes(x) {
+            let sum = 0;
+            for (let i = 0; i <= x; i++) {
+                if (isPrime(i)) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        let x = parseInt(prompt('Nhập số x vào'));
+        console.log(sumPrimes(x));
+
+    </script>
+</body>
+
+</html>

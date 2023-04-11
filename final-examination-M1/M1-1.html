@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findAve(arr) {
+            var sum = 0;
+            var ave = 0;
+            for (var i = 0; i <= arr.length - 1; i++) {
+                sum += arr[i];
+                ave = sum / arr.length
+            }
+            return ave;
+        }
+
+        findAve(arr);
+        console.log(findAve(arr));
+
+    </script>
+</body>
+
+</html>
