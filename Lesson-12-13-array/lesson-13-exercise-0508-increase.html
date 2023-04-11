@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Input an integer array of 10 elements
+        let intArray = [5, 3, 8, 1, 9, 2, 4, 7, 6, 0];
+
+        // Sort the array in ascending order using a loop
+        for (let i = 0; i < intArray.length - 1; i++) {
+            for (let j = i + 1; j < intArray.length; j++) {
+                if (intArray[j] < intArray[i]) {
+                    let temp = intArray[i];
+                    intArray[i] = intArray[j];
+                    intArray[j] = temp;
+                }
+            }
+        }
+
+        // Output the sorted array
+        let output = "Sorted array: ";
+        for (let i = 0; i < intArray.length; i++) {
+            output += intArray[i] + " ";
+        }
+        console.log(output);
+
+    </script>
+</body>
+
+</html>

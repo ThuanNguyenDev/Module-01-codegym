@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Tìm giá trị trong mảng</title>
+</head>
+
+<body>
+    <script>
+
+        let value = parseInt(prompt('Nhập vào một giá trị nào đó ?'));
+
+        let numbers = [1, 2, 4, 3, 7, 8]
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (value == numbers[i]) {
+                alert("Value" + numbers[i] + "found at" + i);
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

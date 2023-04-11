@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let charArray = ['a', '1', 'b', 'c', '2', 'd', 'e', '3'];
+
+        let size = charArray.length;
+
+        let numCount = 0;
+
+        for (let i = 0; i < size; i++) {
+            if (!isNaN(parseInt(charArray[i]))) {
+                numCount++;
+            }
+        }
+        console.log("Number of numeric characters: " + numCount);
+
+        // Declare an array of characters
+        // Get the size of the array
+        // Initialize a counter for numeric characters
+        // Loop through the array and count the numeric characters
+        // Check if the character is numeric
+        // Output the count of numeric characters
+
+    </script>
+</body>
+
+</html>

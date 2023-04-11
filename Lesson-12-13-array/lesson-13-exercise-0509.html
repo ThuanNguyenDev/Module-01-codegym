@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Initialize two integer arrays with 10 elements each
+        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+        // Declare an integer array of 20 elements
+        let c = new Array(20);
+
+        // Concatenate the elements from arrays a and b into array c
+        for (let i = 0; i < a.length; i++) {
+            c[i] = a[i];
+        }
+        for (let i = 0; i < b.length; i++) {
+            c[i + a.length] = b[i];
+        }
+
+        // Display the resulting array c
+        let output = "Array c: ";
+        for (let i = 0; i < c.length; i++) {
+            output += c[i] + " ";
+        }
+        console.log(output);
+    </script>
+</body>
+
+</html>

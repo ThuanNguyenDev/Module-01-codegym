@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Chương trình tìm xem V có nằm trong mảng số nguyên không</title>
+
+</head>
+
+<body>
+
+    <input type="text" id="user-input" placeholder="Nhập số vào: ">
+    <br>
+    <br>
+    <input type="button" id="check" value="Kiểm tra">
+    <br>
+    <br>
+
+    <script>
+
+        document.getElementById('check').onclick = function () {
+            var input = Number(userInput.value);
+
+            if (checkIfExists(arrNum, input)) {
+                document.write('Number' + ' '  + input + ' ' + ' is in the array')
+            } else {
+                document.write('Number' + ' ' + input + ' ' + 'is not in the array');
+            }
+
+        }
+
+
+        function checkIfExists(arr, num) {
+            for (var i = 0; i < arr.length; i += 1) {
+                if (num === arr[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var arrNum = [18, 23, 20, 17, 21, 18, 22, 19, 18, 20];
+        var userInput = document.getElementById('user-input');
+
+
+    </script>
+</body>
+
+</html>

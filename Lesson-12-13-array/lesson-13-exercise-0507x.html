@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Define the array to be analyzed
+        let myArray = [3, 5, 2, 8, 4, 6, 1, 7, 9, 10];
+
+        // Define the value to be searched for
+        let searchValue = 5;
+
+        // Initialize a variable to keep track of whether the value was found
+        let valueFound = false;
+
+        // Loop through each element in the array
+        for (let i = 0; i < myArray.length; i++) {
+
+            // If the current element matches the search value, remove it from the array
+            if (myArray[i] === searchValue) {
+
+                // Shift the elements to the right of the search value to the left by one position
+                for (let j = i; j < myArray.length - 1; j++) {
+                    myArray[j] = myArray[j + 1];
+                }
+
+                // Set the last element of the array to 0
+                myArray[myArray.length - 1] = 0;
+
+                // Update the value found flag
+                valueFound = true;
+
+                // Break out of the loop since we only want to remove the first instance of the search value
+                break;
+            }
+        }
+
+        // If the search value was found, display the modified array
+        if (valueFound) {
+            console.log("The array with the value " + searchValue + " removed is: " + myArray);
+        }
+
+        // If the search value was not found, display an error message
+        else {
+            console.log("The value " + searchValue + " was not found in the array.");
+        }
+    </script>
+</body>
+
+</html>

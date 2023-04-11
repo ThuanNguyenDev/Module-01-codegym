@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Tìm giá trị lớn nhất
+        function findMax(arr) {
+            let max = arr[0];
+            for (let i = 0; i <= arr.length - 1; i += 1) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        let arr1 = [-3, 3, 5, 7];
+        let max = findMax(arr1);
+        alert(max);
+
+        //Tính giá trị trung bình các phần tử trong 1 mảng
+        function findAve(arr) {
+            let sum = 0;
+            let ave = 0;
+            for (let i = 0; i <= arr.length - 1; i++) {
+                sum = sum + arr[i];
+                ave = sum/arr.length;
+            }
+            return ave;
+        }
+
+        let arr2 = [1, 2, 3, 4];
+        let ave = findAve(arr2);
+        alert(ave);
+    </script>
+
+</body>
+
+</html>
