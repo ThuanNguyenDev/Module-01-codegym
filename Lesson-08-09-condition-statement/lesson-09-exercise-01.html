@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> [Bài tập] Tính chỉ số cân nặng của cơ thể </title>
+</head>
+
+<body>
+    <script>
+        let a = prompt(" Nhập cân nặng là : ");
+        let b = prompt(" Nhập chiều cao là: ");
+        resultBMI = a / (b ^ 2)
+
+        if (resultBMI < 18)
+            document.write("Underweight");
+        else if (resultBMI < 25.0)
+            document.write("Normal");
+        else if (resultBMI < 30.0)
+            document.write("Overweight");
+        else
+            document.write("Obese");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Luyện tập với cấu trúc switch-case</title>
+</head>
+
+<body>
+    <script>
+
+        let value = parseFloat(prompt('Nhập số vào', 0))
+        let number_0 = value == 0;
+        let number_1 = value > 0;
+        let number_2 = value < 0;
+        let tH = 0 == 0;
+        switch (tH) {
+            case number_0:
+                alert(0);
+                break;
+            case number_1:
+                alert(1);
+                break;
+            case number_2:
+                alert(-1);
+                break;
+        }
+    </script>
+</body>
+
+</html>
