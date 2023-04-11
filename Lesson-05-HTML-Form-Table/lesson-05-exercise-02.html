@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML links</title>
+
+    <style>
+        body {
+            border: 25px solid rgb(144, 225, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            width: 50%;
+        }
+
+        td {
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <table style="width:100%; ">
+            <tr>
+                <th width="100"></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td style="background-color: tomato; color: aliceblue; font-weight: 100; text-align: center; font-size: 30px;"
+                    colspan="2">SỞ THÍCH CỦA BẠN</td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="text-align: right; color: blue;">Họ và tên</p>
+                </td>
+                <td><input type="text" name="yourname" style="margin-left: 8px; width: 350px; height: 28px;"
+                        placeholder="Nhập tên của bạn"></td>
+            </tr>
+            <tr>
+                <td><label for="email">
+                        <p style="text-align: right; color: blue;">Email</p>
+                    </label></td>
+                <td><input type="text" name="email" id="email" style="margin-left: 8px; width: 250px; height: 27px; "
+                        placeholder="Nhập email của bạn"></td>
+            </tr>
+            <tr>
+                <td><label>
+                        <p style="text-align: right;  color: blue; margin-bottom: 65px; ">Sở thích</p>
+                    </label> </td>
+                <td style="color: coral;">
+                    <p style="color: coral; margin: 8px;  ">
+                        <label><input type="checkbox" id="sport" name="hobby" value="hobby"> Thể thao</label>
+                        <label><input type="checkbox" id="music" name="hobby" value="hobby"> Âm nhạc</label>
+                        <input type="checkbox" id="read" name="hobby" value="hobby">
+                        <label for="read"> Đọc sách </label> <br>
+                        <input type="checkbox" id="surf" name="hobby" value="hobby">
+                        <label for="surf"> Lướt web </label>
+                        <input type="checkbox" id="game" name="hobby" value="hobby">
+                        <label for="game"> Chơi game </label>
+                        <input type="checkbox" id="movie" name="hobby" value="hobby">
+                        <label for="movie"> Điện ảnh </label> <br>
+                        <input type="checkbox" id="tourism" name="hobby" value="hobby">
+                        <label for="tourism"> Du lịch </label>
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Gửi thông tin" style="font-size: 18px;"> 
+                    <input type="reset"
+                        value="Nhập lại" style="font-size: 18px;"> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
