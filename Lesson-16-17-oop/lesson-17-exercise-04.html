@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onclick="getMousePos(event)" style="font-size: 25px;">
+
+    <div id="divcell"></div>
+    <script>
+        let text = "";
+        let topCell = 0;
+        let left = 0;
+        let textValue = '';
+        let array = [];
+        let round = 0;
+        for (let i = 0; i < 20; i++) {
+            for (let j = 0; j < 20; j++) {
+                text += '<div id =  "cell-' + i + '-' + j + '"' +
+                    'class = "cell" style = " text-align: center; position: absolute; width: 40px; height:40px;' +
+                    'left:' + left + 'px; top:' + topCell + 'px; line-height: 40px; border: 1px solid blue;"> </div> <br>';
+                textValue += "cell-" + i + "-" + j + ",";
+                left += 40;
+            }
+            array[i] = textValue.split(',');
+            textValue = '';
+            left = 0;
+            topCell += 40;
+
+        }
+
+        function getMousePos(event) {
+            let xPos = event.clientY;
+            let yPos = event.clientX;
+            console.log("Toạ độ x: " + xPos + " Toạ độ y:" + yPos);
+            let arrayX = Math.floor(xPos / 40);
+            let arrayY = Math.floor(yPos / 40);
+            console.log(arrayX + " " + arrayY);
+            console.log(array[arrayX][arrayY]);
+            var cellDiv = document.getElementById(array[arrayX][arrayY]);
+            if (round % 2 == 0) {
+                cellDiv.innerHTML = "X";
+                round++;
+            } else {
+                cellDiv.innerHTML = "O";
+                round++;
+            }
+            console.log(cellHtml(arrayX, arrayY));
+            var n = array.length;
+            for (let i = 0; i < 20; i++) {
+                for (let j = 0; j < 20; j++) {
+                    if (cellHtml(i, j) == "X" && cellHtml(i, j + 1) == "X" && cellHtml(i, j + 2) == "X" &&
+                        cellHtml(i, j + 3) == "X" && cellHtml(i, j + 4) == "X") {
+                        alert("X win!");
+                        break;
+                    } else if (cellHtml(i, j) == "X" && cellHtml(i + 1, j) == "X" && cellHtml(i + 2, j) == "X" &&
+                        cellHtml(i + 3, j) == "X" && cellHtml(i + 4, j) == "X") {
+                        alert("X win!");
+                        break;
+                    } else if (cellHtml(i, j) == "X" && cellHtml(i + 1, j + 1) == "X" && cellHtml(i + 2, j + 2) == "X" &&
+                        cellHtml(i + 3, j + 3) == "X" && cellHtml(i + 4, j + 4) == "X") {
+                        alert("X win!");
+                        break;
+                    } else if (cellHtml(i, n - 1 - j) == "X" && cellHtml(i + 1, n - 2 - j) == "X" && cellHtml(i + 2, n - 3 - j) == "X" &&
+                        cellHtml(i + 3, n - 4 - j) == "X" && cellHtml(i + 4, n - 5 - j) == "X") {
+                        alert("X win!");
+                        break;
+                    }
+                }
+            }
+
+
+        }
+        function cellHtml(i, j) {
+            let cellHTML = document.getElementById(array[i][j]).textContent;
+            return cellHTML;
+        }
+
+        document.getElementById("divcell").innerHTML = text;
+    </script>
+</body>
+
+</html>

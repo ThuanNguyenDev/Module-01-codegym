@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Mobile(name, pi , messpeding,inbox,outbox,status) {
+            this.name = name;
+            this.pin = pin;
+            this.messpeding = "";
+            this.inbox = [];
+            this.outbox = [];
+            this.status = false;
+            this.turnOn = function () {
+                this.status = true;
+            }
+            this.turnOff = function () {
+                this.status = false;
+            }
+            this.charge = function () {
+                if (this.pin < 100) {
+                    this.pin++;
+                }
+            }
+            this.texting = function (mess) {
+                if (this.status) {
+                    this.pin--;
+                    this.messpeding = mess;
+                }
+
+            }
+            this.receive = function (from, newmess) {
+                if (this.status) {
+                    this.pin--;
+                    this.inbox.push("from : " + from.name + " mess: " + newmess);
+                }
+
+            }
+            this.sentmess = function (to) {
+                if (this.status) {
+                    this.pin--;
+                    this.outbox.push(this.messpeding);
+                    to.receive(this, this.messpeding);
+                }
+
+            }
+            this.viewInbox = function () {
+                if (this.status) {
+                    this.pin--;
+                    return this.inbox;
+                }
+
+            }
+            this.viewOutbox = function () {
+                if (this.status) {
+                    this.pin--;
+                    return this.outbox;
+                }
+            }
+        }
+
+        let nokia = new Mobile("nokia", 50);
+        let iphone = new Mobile("iphone", 60);
+        nokia.turnOn();
+        iphone.turnOn();
+        nokia.texting("Hello");
+        nokia.sentmess(iphone);
+
+        console.log(iphone.viewInbox());
+
+    </script>
+</body>
+
+</html>

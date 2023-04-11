@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="text" id="input_temperature" min="-255">
+<button onclick="changeTemperature()">Conveter</button>
+<p>Nhiệt độ F là: <span id="temperatureF"></span></p>
+<p>Nhiệt độ K là: <span id="temperatureK"></span></p>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(temperatureC) {
+                this.temperatureC = temperatureC;
+            }
+
+            get temperatureC() {
+                return this._temperatureC;
+            }
+
+            set temperatureC(value) {
+                if (value < -273 - 5) {
+                    throw new Error("Nhập sai nhiệt độ!");
+                }
+                this._temperatureC = value;
+            }
+
+            conveterCtoF() {
+                return this.temperatureC * 1.8 + 32;
+            }
+
+            conveterCtoKenvin() {
+                return this.temperatureC + 273.15;
+            }
+        }
+
+        function defaultOut() {
+            let temperature = new Temperature(25);
+            let temperatureCtoF = temperature.conveterCtoF();
+            let temperatureCtoK = temperature.conveterCtoKenvin();
+            document.getElementById("temperatureF").innerHTML = temperatureCtoF;
+            document.getElementById("temperatureK").innerHTML = temperatureCtoK;
+        }
+
+        window.onload = defaultOut();
+
+        function changeTemperature() {
+            let value = parseFloat(document.getElementById("input_temperature").value);
+            try {
+                let temperature = new Temperature(value);
+                let temperatureCtoF = temperature.conveterCtoF();
+                let temperatureCtoK = temperature.conveterCtoKenvin();
+                document.getElementById("temperatureF").innerHTML = temperatureCtoF;
+                document.getElementById("temperatureK").innerHTML = temperatureCtoK;
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

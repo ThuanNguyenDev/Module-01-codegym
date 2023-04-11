@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+
+        <script>
+
+
+            class Circle {
+                constructor(x, y, radius) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = radius;
+                    this.color = this.getRandomColor();
+                }
+
+                getRandomHex() {
+                    return Math.floor(Math.random() * 255);
+                }
+
+                getRandomColor() {
+                    const red = this.getRandomHex();
+                    const green = this.getRandomHex();
+                    const blue = this.getRandomHex();
+                    return `rgb(${red}, ${green}, ${blue})`;
+                }
+
+                draw(ctx) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+
+            class CircleGenerator {
+                constructor(canvasId, numberOfCircles) {
+                    this.canvas = document.getElementById(canvasId);
+                    this.ctx = this.canvas.getContext("2d");
+                    this.numberOfCircles = numberOfCircles;
+                    this.circles = [];
+
+                    for (let i = 0; i < this.numberOfCircles; i++) {
+                        const radius = Math.floor(Math.random() * 80);
+                        const x = Math.random() * this.canvas.width;
+                        const y = Math.random() * this.canvas.height;
+                        const circle = new Circle(x, y, radius);
+                        this.circles.push(circle);
+                    }
+                }
+
+                draw() {
+                    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                    this.circles.forEach((circle) => circle.draw(this.ctx));
+                }
+
+                startAnimation() {
+                    const animate = () => {
+                        this.draw();
+                        requestAnimationFrame(animate);
+                    };
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            const circleGenerator = new CircleGenerator("myCanvas", 30);
+            circleGenerator.startAnimation();
+
+        </script>
+</body>
+
+</html>

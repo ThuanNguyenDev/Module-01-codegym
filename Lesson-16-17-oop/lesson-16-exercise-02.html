@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_temperature" min="-255">
+    <button onclick="changeTemperature()">Conveter</button>
+    <p>Nhiệt độ F là: <span id="temperatureF"></span></p>
+    <p>Nhiệt độ K là: <span id="temperatureK"></span></p>
+
+    <script>
+
+        class Temperature {
+            constructor(celsius) {
+                this.celsius = celsius;
+            }
+
+            fahrenheit() {
+                return 9 / 5 * this.celsius + 32;
+            }
+
+            kelvins() {
+                return this.celsius + 273.15
+            }
+        }
+
+        let temperature = new Temperature(25);
+        let my_fahrenheit = temperature.fahrenheit();
+        let my_kelvins = temperature.kelvins();
+
+        document.write("Nhiệt độ K: " + my_kelvins + "<br>"
+            + "Nhiệt độ F: " + my_fahrenheit)
+
+    </script>
+</body>
+
+</html>

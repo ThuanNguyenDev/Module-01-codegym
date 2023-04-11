@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+
+    <body>
+        <script>
+
+            function Rectangle(x, y, width, height) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+
+                this.area = function () {
+                    return width * height;
+                }
+
+                this.perimeter = function () {
+                    return (height + width) * 2;
+                }
+            }
+
+
+            function randomNumber() {
+                return Math.floor(Math.random() * 500);
+            }
+            function createRectangle() {
+                var ctx = document.getElementById("myCanvas").getContext("2d");
+                var x = Math.random() * 1368;
+                var y = Math.random() * 768;
+                let rectangle = new Rectangle(x, y, 100, 50);
+                ctx.strokeRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            }
+            function changeRectangle() {
+                let width = randomNumber();
+                let height = randomNumber();
+                let rectangle2 = new Rectangle(0, 0, width, height);
+                document.write("<br> Diện tích hình chữ nhật là: " + rectangle2.area() + "<br>");
+                document.write("Chu vi hình chữ nhật là: " + rectangle2.perimeter());
+            }
+            createRectangle();
+            changeRectangle();
+
+        </script>
+    </body>
+
+</html>

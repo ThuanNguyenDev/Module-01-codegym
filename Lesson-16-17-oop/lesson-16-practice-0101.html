@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Xây dựng lớp Date</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        let MyDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+
+            this.getDay = function () {
+                return this.day;
+            }
+
+            this.getMonth = function () {
+                return this.month;
+            }
+
+            this.getYear = function () {
+                return this.year;
+            }
+
+            this.setDate = function (day) {
+                this.day = day;
+            }
+
+            this.setDate = function (month) {
+                this.month = month;
+            }
+
+            this.setDate = function (year) {
+                this.year = year;
+            }
+
+            this.toDateStringDay = function (day) {
+                this.day = day;
+            }
+
+            this.toDateStringMonth = function (month) {
+                this.month = month;
+            }
+
+            this.toDateStringYear = function (year) {
+                this.year = year;
+            }
+        };
+
+        let date = new MyDate(16, 3, 2021);
+
+        let text = date.toDateString();
+        document.getElementById("demo").innerHTML = text;
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

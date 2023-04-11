@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function Apple(weight) {
+            this.weight = weight;
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+        function Human(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.talk = function () {
+                console.log("I am " + name);
+            }
+            this.eat = function () {
+                return this.weight += 1;
+            }
+            this.getName = function () {
+                return this.name;
+            }
+            this.getGender = function () {
+                return this.gender;
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+        let apple = new Apple(10);
+        let adam = new Human("Adam", "Boy", 65);
+        let eva = new Human("Eva", "Girl", 50);
+        let appleWeight = apple.getWeight();
+        while (appleWeight > 0) {
+            appleWeight -= 1;
+            document.write(adam.name + " ăn táo: <br>");
+            document.write("&nbsp; Quả táo còn: " + appleWeight + " đơn vị. <br>");
+            document.write("&nbsp; Cân nặng của Adam là: " + adam.eat() + ".<br>");
+            appleWeight -= 1;
+            document.write(eva.name + " ăn táo: <br>");
+            document.write("&nbsp; Quả táo còn: " + appleWeight + " đơn vị. <br>");
+            document.write("&nbsp; Cân nặng của Adam là: " + eva.eat() + ".<br>");
+
+        }
+    </script>
+</body>
+
+</html>
