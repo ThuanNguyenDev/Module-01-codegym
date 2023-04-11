@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Converter {
+            constructor() { }
+
+            footToMeter(foot) {
+                let meter = 0.305 * foot;
+                return meter;
+            }
+
+            meterToFoot(meter) {
+                let foot = 3.279 * meter;
+                return foot;
+            }
+        }
+
+        let converter = new Converter();
+
+        let foot = prompt("Nhập foot: ");
+        let meter = prompt("Nhập meter: ");
+
+        document.write(foot + " foot " + "= " + converter.footToMeter(foot) + " meter");
+        document.write("<br>" + "<br>");
+        document.write(meter + " meter " + "= " + converter.meterToFoot(meter) + " foot");
+
+    </script>
+</body>
+
+</html>

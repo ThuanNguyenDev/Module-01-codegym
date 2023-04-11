@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let C = 0;
+        let S = 0;
+        function calculateCircle(radius) {
+            C = Math.PI * radius * 2;
+            S = Math.PI * radius * radius;
+        }
+
+        calculateCircle(prompt("Nhập bán kính vào : "));
+      
+        document.write('Chu vi hình tròn là  : ' + C + "<br>" + "<br>" + 'Diện tích hình tròn là :' + S);
+
+    </script>
+</body>
+
+</html>
