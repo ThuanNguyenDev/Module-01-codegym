@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng máy tính</title>
+</head>
+
+<body>
+    <h2>CACULATOR</h2>
+    <input type="number" id="num1" placeholder="số thứ nhất">
+    <input type="number" id="num2" placeholder="số thứ hai">
+    <button onclick="Additon()">(+)</button>
+    <button onclick="Subtraction()">(-)</button>
+    <button onclick="Multiplication()">(*)</button>
+    <button onclick="Division()">(/)</button>
+    <br>
+    <h2>KẾT QUẢ </h2>
+    <span id="result">ĐÓ LÀ<span>
+
+            <script>
+                function Additon() {
+                    let num1 = parseFloat(document.getElementById("num1").value);
+                    let num2 = parseFloat(document.getElementById("num2").value);
+                    let result = (num1 + num2);
+                    document.getElementById("result").innerHTML = result;
+                }
+
+                function Subtraction() {
+                    let num1 = parseFloat(document.getElementById("num1").value);
+                    let num2 = parseFloat(document.getElementById("num2").value);
+                    let result = (num1 - num2);
+                    document.getElementById("result").innerHTML = result;
+                }
+
+                function Multiplication() {
+                    let num1 = parseFloat(document.getElementById("num1").value);
+                    let num2 = parseFloat(document.getElementById("num2").value);
+                    let result = (num1 * num2);
+                    document.getElementById("result").innerHTML = result;
+
+                }
+
+                function Division() {
+                    let num1 = parseFloat(document.getElementById("num1").value);
+                    let num2 = parseFloat(document.getElementById("num2").value);
+                    let result = num1 / num2;
+                    document.getElementById("result").innerHTML = result;
+                }
+            </script>
+</body>
+
+</html>

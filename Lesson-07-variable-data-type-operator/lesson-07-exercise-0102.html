@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng
+        dẫn: C/5 = (F-32)/9]</title>
+</head>
+
+<body>
+    <input type="number" name="temperature" id="temperatureC" placeholder="Nhập độ C" style="font-size: 20px;">
+    <button onclick="convert()" style="font-size: 20px;">Convert</button><br>
+    <h2>Độ F là: <span id="temperatureF">...</span></h2>
+    ​
+    <script>
+        function convert() {
+            let C = parseFloat(document.getElementById("temperatureC").value);
+            let F = C * 1.8 + 32;
+            document.getElementById("temperatureF").innerHTML = F;
+        }
+    </script>
+</body>
+
+</html>

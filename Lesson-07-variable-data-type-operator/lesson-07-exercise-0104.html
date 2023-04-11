@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Viết chương trình chu vi hình tròn</title>
+</head>
+
+<body>
+    <input type="number" name="radius" id="radius" placeholder="Nhập độ dài bán kính" style="font-size: 20px;">
+    <button onclick="calculate()" style="font-size: 20px;">Calculate</button><br>
+    <h2>Chu vi hình tròn là: <span id="perimeter">...</span></h2>
+    ​
+    <script>
+        function calculate() {
+            let R = parseFloat(document.getElementById("radius").value);
+            let C = R * 2 * 3.14;
+            document.getElementById("perimeter").innerHTML = C;
+        }
+    </script>
+</body>
+
+</html>

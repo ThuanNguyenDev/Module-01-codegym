@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển
+        thị điểm trung bình và tổng của những điểm này.
+    </title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Vật lý</th>
+            <th>Hoá học</th>
+            <th>Sinh học</th>
+        </tr>
+        <tr>
+            <td><input type="number" name="subject" id="vatLy" placeholder="Nhập điểm Vật lý"></td>
+            <td><input type="number" name="subject" id="hoaHoc" placeholder="Nhập điểm Hoá học"></td>
+            <td><input type="number" name="subject" id="sinhHoc" placeholder="Nhập điểm Sinh học"></td>
+            <td><button onclick="tbc()">Tính TBC</button></td>
+        </tr>
+    </table>
+    <h2>Đây là kết quả: <span id="result"> ... </span></h2>
+    <script>
+        function tbc() {
+            let vatLy = parseFloat(document.getElementById("vatLy").value);
+            let hoaHoc = parseFloat(document.getElementById("hoaHoc").value);
+            let sinhHoc = parseFloat(document.getElementById("sinhHoc").value);
+            let result = (vatLy + hoaHoc + sinhHoc) / 3;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
